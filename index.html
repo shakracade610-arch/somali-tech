@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Somali Tech Night</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: white;
+      font-family: "Outfit", sans-serif;
+    }
+    /*navbar*/
+    header {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    header a {
+      text-decoration: none;
+      color: black;
+      margin: 23px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    header a:hover {
+      color: #1d6ff2;
+    }
+    header a::after {
+      content: "";
+      width: 65px;
+      height: 4px;
+      background-color: #1d6ff2;
+      margin-bottom: 4px;
+    }
+    header h3 {
+      font-size: 2rem;
+    }
+    /*section*/
+    #home {
+      padding: 20px;
+      position: relative;
+    }
+    .pa h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    .pa h1::after {
+      content: "";
+      display: block;
+      width: 160px;
+      height: 3px;
+      background: #1268f3;
+      margin-top: 10px;
+      border-radius: 5px;
+      margin-left: 50%;
+    }
+    .pa {
+      position: relative;
+      max-width: 100%;
+      text-align: center;
+      line-height: 35px;
+    }
+    .pa p {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgb(96, 96, 96);
+    }
+    .pa h5 {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgb(96, 96, 96);
+    }
+    .pa button {
+      width: 120px;
+      height: 25px;
+      border: none;
+      background-color: #1d6ff2;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px 5px 10px 5px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .pa button:hover {
+      background-color: #0857d8;
+    }
+    #about {
+      padding: 20px;
+      text-align: center;
+    }
+    #about p {
+      width: 300px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    #about h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 20px;
+
+      text-align: center;
+    }
+
+    /*speakers*/
+
+    #speakers {
+      padding: 40px;
+      text-align: center;
+    }
+
+    #speakers h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .kuxiga {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .speaker {
+      flex: 1;
+      text-align: center;
+    }
+
+    .speaker img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid #1d6ff2;
+      object-fit: cover;
+    }
+
+    .speaker h3 {
+      font-size: 18px;
+      margin: 15px 0 5px;
+    }
+
+    .speaker p {
+      margin: 0;
+      color: #555;
+    }
+    /*schedule*/
+    .container {
+      padding: 20px;
+
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .kuli:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    #schedule h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    #schedule h3 {
+      line-height: 30px;
+    }
+    #schedule h3::after {
+      content: "";
+      width: 100px;
+      height: 4px;
+      background-color: #1268f3;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+    .kuli {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-shadow: 1px 2px 10px #d7d7d7;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 5px;
+      border: 1px solid #1268f3;
+    }
+
+    .kali {
+      flex: 1;
+      text-align: center;
+      width: 200px;
+
+      border-radius: 10px;
+    }
+    /*location*/
+    #Register {
+      padding: 40px 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #Register h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #Register form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #Register label {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    #Register input,
+    #Register textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #1d6ff2;
+      border-radius: 10px 0 10px 0;
+      outline: none;
+    }
+
+    #Register textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    #Register input:focus,
+    #Register textarea:focus {
+      border-color: #0857d8;
+    }
+
+    #Register button {
+      width: 140px;
+      height: 38px;
+      border: none;
+      background-color: #1d6ff2;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px 5px 10px 5px;
+      margin: 5px auto 0;
+      cursor: pointer;
+    }
+
+    #Register button:hover {
+      background-color: #0857d8;
+    }
+
+    footer {
+      padding: 15px;
+      text-align: center;
+    }
+    /* responsive design */
+
+    @media (max-width: 768px) {
+      /* navbar */
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      header h3 {
+        font-size: 1.7rem;
+      }
+
+      header a {
+        margin: 8px;
+        font-size: 0.85rem;
+      }
+
+      /* home */
+      #home {
+        padding: 20px 15px;
+      }
+
+      .pa h1 {
+        font-size: 2.3rem;
+      }
+
+      .pa h1::after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .pa p {
+        font-size: 14px;
+      }
+
+      /* about */
+      #about {
+        padding: 20px 15px;
+      }
+
+      #about p {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      /* speakers */
+      #speakers {
+        padding: 30px 15px;
+      }
+
+      .kuxiga {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+      }
+
+      .speaker {
+        width: 100%;
+      }
+
+      /* schedule */
+      .container {
+        flex-direction: column;
+        padding: 15px;
+        margin: 10px;
+      }
+
+      .kuli {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .kali {
+        width: 100%;
+      }
+
+      /* Register */
+      #Register {
+        width: 100%;
+        padding: 10px 20px;
+      }
+
+      #Register input,
+      #Register textarea {
+        width: 100%;
+      }
+
+      /* footer */
+      footer {
+        padding: 15px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header a {
+        margin: 5px;
+        font-size: 0.75rem;
+      }
+
+      .pa h1 {
+        font-size: 1.9rem;
+      }
+
+      .pa p {
+        font-size: 13px;
+      }
+
+      #speakers h2,
+      #schedule h2,
+      #Register h2,
+      #about h2 {
+        font-size: 1.7rem;
+      }
+
+      .speaker img {
+        width: 90px;
+        height: 90px;
+      }
+
+      #Register {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+  <body>
+    <!--navbar-->
+    <header>
+      <h3>somali tech night</h3>
+      <nav>
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#speakers">speakers</a>
+        <a href="#schedule">schedule</a>
+        <a href="#Register">Register</a>
+      </nav>
+    </header>
+    <hr />
+    <!--section-->
+    <section id="home">
+      <div class="pa">
+        <h1>somali tech night</h1>
+        <p>learn connect and explore technology</p>
+
+        <h5>📅28 septemper 2025</h5>
+
+        <p>17:00-19:00</p>
+        <p>📍oslo, norway</p>
+
+        <button>Click</button>
+      </div>
+    </section>
+    <hr />
+    <!--about-->
+    <section id="about">
+      <h2>About the event</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi at et
+        excepturi debitis magni similique aspernatur laborum commodi maxime,
+        officiis sint incidunt alias, nulla vitae veniam eum sapiente
+        consectetur ullam!
+      </p>
+    </section>
+    <hr />
+    <section id="speakers">
+      <h2>Speakers</h2>
+
+      <div class="kuxiga">
+        <div class="speaker">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl88HKdNu6ErEUFah_l5efx5i1sotYgwRivkPeR75WRQ&s=10"
+            alt=""
+          />
+          <h3>Abdy Shakuur Abdy Aziiz</h3>
+          <p>Learn Full Stack</p>
+        </div>
+
+        <div class="speaker">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/057/936/076/small/confident-businessman-smiling-with-arms-crossed-conveying-professionalism-and-success-photo.jpg"
+            alt=""
+          />
+          <h3>Ayman Anwar</h3>
+          <p>UI & UX Design</p>
+        </div>
+
+        <div class="speaker">
+          <img
+            src="https://img.magnific.com/free-photo/happy-successful-muslim-businesswoman-posing-outside_74855-2007.jpg"
+            alt=""
+          />
+          <h3>Muna Abdy</h3>
+          <p>Software Engineer</p>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section id="schedule">
+      <h2>Event schedule</h2>
+      <div class="container">
+        <div class="kuli">
+          <div class="kali">
+            <p>18:00-19:00</p>
+            <h3>frontend developer</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+              eum, ea quae minima rerum tenetur quidem cupiditate voluptas
+              impedit minus!
+            </p>
+          </div>
+        </div>
+        <div class="kuli">
+          <div class="kali">
+            <p>19:00-20:00</p>
+            <h3>backend developer</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+              eum, ea quae minima rerum tenetur quidem cupiditate voluptas
+              impedit minus!
+            </p>
+          </div>
+        </div>
+        <div class="kuli">
+          <div class="kali">
+            <p>20:00-21:00</p>
+            <h3>full stack developer</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+              eum, ea quae minima rerum tenetur quidem cupiditate voluptas
+              impedit minus!
+            </p>
+          </div>
+        </div>
+        <div class="kuli">
+          <div class="kali">
+            <p>21:00-22:00</p>
+            <h3>AI engineer</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+              eum, ea quae minima rerum tenetur quidem cupiditate voluptas
+              impedit minus!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section id="Register">
+      <h2>Register</h2>
+      <form>
+        <label for="name">Name</label><br />
+        <input type="text" placeholder="Name..." /><br />
+        <label for="email">Email</label><br />
+        <input type="email" placeholder="Email..." /><br />
+        <label placeholder="massage" for="massage">massage</label><br />
+        <textarea name="" id=""></textarea><br />
+      </form>
+      <button>Register Now</button>
+    </section>
+    <hr />
+    <footer>
+      <p>© 2026 Somali Tech Night</p>
+    </footer>
+  </body>
+</html>
